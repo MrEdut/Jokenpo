@@ -28,9 +28,15 @@ body {
   justify-content: center;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #scoreboard {
   font-size: 140px;
-  justify-self: center;
   margin-bottom: 40px;
   font-family: "Bungee";
   color: #7d2ae8;
