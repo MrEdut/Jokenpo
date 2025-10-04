@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Bungee&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+  <title>Jokenpô: the game</title>
+</head>
+
+<body>
+  <img class="light-dark-theme" src="" alt="" onclick="themeToogleEvent()">
+  <main id="container">
+    <h1 id="scoreboard"><span id="scoreboard-user">0</span> x <span id="scoreboard-enemy">0</span></h1>
+    <section id="game-board">
+      <section id="players-hands">
+        <img id="user-hand" class="game-board-hand" src="src/images/rock.png" alt="">
+        <img id="enemy-hand" class="game-board-hand" src="src/images/rock.png" alt="">
+      </section>
+      <p class="game-chart">Choose your hand bellow: </p>
+      <ul class="hand-option-list">
+        <li class="hand">
+          <img src="src/images/rock.png" alt="">
+          <p>Rock</p>
+        </li>
+        <li class="hand">
+          <img src="src/images/paper.png" alt="">
+          <p>Paper</p>
+        </li>
+        <li class="hand">
+          <img src="src/images/scissors.png" alt="">
+          <p>Scissors</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>

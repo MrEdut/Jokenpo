@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root[data-theme="light"] {
+  --background-color: #dfdfdf;
+}
+
+:root[data-theme="dark"] {
+  --background-color: #1d1b1f;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#scoreboard {
+  font-size: 140px;
+  justify-self: center;
+  margin-bottom: 40px;
+  font-family: "Bungee";
+  color: #7d2ae8;
+}
+
+#game-board {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--background-color);
+  width: 860px;
+  height: 640px;
+  border-radius: 80px;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.game-chart {
+  font-family: "Bungee";
+  color: #7d2ae8;
+  font-size: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.hand-option-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 192px;
+  height: 256px;
+  gap: 80px;
+
+  & li p {
+    font-size: 24px;
+    font-weight: bolder;
+    font-family: "Baloo 2", Courier;
+    color: #7d2ae8;
+    text-transform: capitalize;
+  }
+
+  & li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    transition: 0.5s ease;
+  }
+
+  &:hover .hand:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+.hand img {
+  width: 96px;
+  height: 128px;
+}
+
+#players-hands {
+  width: 100%;
+  height: 192px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 80px 0 40px 0;
+}
+
+#user-hand {
+  transform: rotate(90deg);
+  width: 192px;
+  height: 256px;
+}
+
+.user-hand-animation {
+  animation: shaking-user 0.9s ease-in-out 3;
+}
+
+#enemy-hand {
+  transform: rotate(-90deg) scaleX(-1);
+  width: 192px;
+  height: 256px;
+}
+
+.enemy-hand-animation {
+  animation: shaking-enemy 0.9s ease-in-out 3;
+}
+
+@keyframes shaking-user {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(110deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes shaking-enemy {
+  0% {
+    transform: rotate(-90deg) scaleX(-1);
+  }
+  50% {
+    transform: rotate(-110deg) scaleX(-1);
+  }
+  100% {
+    transform: rotate(-90deg) scaleX(-1);
+  }
+}
+
+.light-dark-theme {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 72px;
+  background-color: #9e9e9e;
+  padding: 16px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1f1f1f;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #121212;
+  }
+}
